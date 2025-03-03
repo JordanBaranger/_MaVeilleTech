@@ -15,24 +15,31 @@ Shortcut.init(
       allowNull: false,
     },
     url: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.STRING(100),
+      allowNull: true,
     },
     icon_url: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     order_index: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
       allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
   },
   {
