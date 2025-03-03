@@ -11,41 +11,47 @@ Post.init(
       autoIncrement: true,
     },
     title: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(100),
       allowNull: false,
     },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     publish_date: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
       allowNull: false,
     },
     edit_date: {
       type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     category: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    author: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(100),
       allowNull: false,
     },
     source_url: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(2048),
     },
     thumbnail: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(2048),
     },
     status: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM("draft", "published", "archived"),
+      defaultValue: "draft",
       allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "users",
+        key: "id",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
     },
   },
   {
