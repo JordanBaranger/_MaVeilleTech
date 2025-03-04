@@ -4,18 +4,18 @@ import tokenVerified from "../../middlewares/JWT/verify.js";
 const tagsRouter = Router();
 
 // * GET /tags
-tagsRouter.get("/tags");
+tagsRouter.get("/");
 
 // ADMIN ONLY
 // * POST /tags
-tagsRouter.post("/tags", tokenVerified);
+tagsRouter.post("/", tokenVerified);
 
 // ADMIN ONLY
 // * PUT /tags
-tagsRouter.put("/tags/:id", tokenVerified);
+tagsRouter.put("/:id", tokenVerified);
 
 // ADMIN ONLY
 // * DELETE /tags
-tagsRouter.delete("/tags/:id", tokenVerified);
+tagsRouter.delete("/:id", tokenVerified);
 
 export default tagsRouter;

@@ -17,6 +17,6 @@ router.use("/new-post", newPostRouter);
 router.use("/articles", articlesRouter);
 router.use("/register", registerRouter);
 router.use("/login", loginRouter);
-router.use("/profiles", profilesRouter);
+router.use("/profile", profilesRouter);
 
 export default router;

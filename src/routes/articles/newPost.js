@@ -4,6 +4,6 @@ import tokenVerified from "../../middlewares/JWT/verify.js";
 const newPostRouter = Router();
 
 // * POST /newPost/
-newPostRouter.post("/newPost", tokenVerified);
+newPostRouter.post("/", tokenVerified);
 
 export default newPostRouter;
