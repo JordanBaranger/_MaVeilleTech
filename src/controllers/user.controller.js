@@ -1,4 +1,4 @@
-import { createUser } from "../services/user/validateUser";
+import { createUserFunction } from "../services/user/validateUser.js";
 
 const userController = {
   // Create a new user
@@ -7,7 +7,7 @@ const userController = {
       const { pseudo, email, password, role } = req.body;
 
       try {
-        createUser({ pseudo, email, password, role });
+        createUserFunction({ pseudo, email, password, role });
         return res
           .status(201)
           .json({ message: "Utilisateur créé avec succès" });

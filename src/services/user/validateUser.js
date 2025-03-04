@@ -1,6 +1,6 @@
-import User from "../../models/user";
+import User from "../../models/user.js";
 
-export const createUser = async ({ pseudo, email, password, role }) => {
+export const createUserFunction = async ({ pseudo, email, password, role }) => {
   const existingUser = await User.findOne({ where: { email } });
   if (existingUser) {
     throw new Error("Email déjà utilisé");
