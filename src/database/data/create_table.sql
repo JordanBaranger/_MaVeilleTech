@@ -66,7 +66,7 @@ CREATE TABLE "shortcut" (
     FOREIGN KEY ("user_id") REFERENCES "user" ("id") ON DELETE CASCADE
 );
 
-CREATE TABLE "LIKE_POST" (
+CREATE TABLE "Like_Post" (
     "post_id" INTEGER NOT NULL,
     "user_id" INTEGER NOT NULL,
     "created_at" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
