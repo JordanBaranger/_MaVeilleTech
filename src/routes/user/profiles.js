@@ -4,15 +4,15 @@ import tokenVerified from "../../middlewares/JWT/verify.js";
 const profilesRouter = Router();
 
 // * GET /profile/
-profilesRouter.get("/profile/:id");
+profilesRouter.get("/:id");
 
 // * POST /profile/
-profilesRouter.post("/profile", tokenVerified);
+profilesRouter.post("/", tokenVerified);
 
 // * PUT /profile/
-profilesRouter.put("/profile/:id", tokenVerified);
+profilesRouter.put("/:id", tokenVerified);
 
 // * DELETE /profile/
-profilesRouter.delete("/profile/:id", tokenVerified);
+profilesRouter.delete("/:id", tokenVerified);
 
 export default profilesRouter;

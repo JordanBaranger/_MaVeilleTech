@@ -4,16 +4,16 @@ import tokenVerified from "../../middlewares/JWT/verify.js";
 const articlesRouter = Router();
 
 // * GET /articles/
-articlesRouter.get("/articles");
-articlesRouter.get("/articles/:id");
+articlesRouter.get("/");
+articlesRouter.get("/:id");
 
 // * POST /articles/
-articlesRouter.post("/articles", tokenVerified);
+articlesRouter.post("/", tokenVerified);
 
 // * PUT /articles/
-articlesRouter.put("/articles/:id", tokenVerified);
+articlesRouter.put("/:id", tokenVerified);
 
 // * DELETE /articles/
-articlesRouter.delete("/articles/:id", tokenVerified);
+articlesRouter.delete("/:id", tokenVerified);
 
 export default articlesRouter;

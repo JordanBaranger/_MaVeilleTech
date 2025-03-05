@@ -1,9 +1,9 @@
 import { Router } from "express";
 import tokenVerified from "../../middlewares/JWT/verify.js";
 
-const newPostRouter = Router();
+const newCommentRouter = Router();
 
 // * POST /newPost/
-newPostRouter.post("/newPost", tokenVerified);
+newCommentRouter.post("/", tokenVerified);
 
-export default newPostRouter;
+export default newCommentRouter;

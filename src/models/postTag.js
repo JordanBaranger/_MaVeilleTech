@@ -5,20 +5,23 @@ export default class PostTag extends Model {}
 
 PostTag.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-    },
-    tag: {
-      type: DataTypes.STRING(50),
-      allowNull: false,
-    },
     post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      primaryKey: true,
       references: {
         model: "posts",
+        key: "id",
+      },
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
+    },
+    tag_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      references: {
+        model: "tags",
         key: "id",
       },
       onDelete: "CASCADE",
@@ -29,8 +32,6 @@ PostTag.init(
     sequelize,
     modelName: "PostTag",
     tableName: "post_tag",
-    timestamps: true,
-    createdAt: "created_at",
-    updatedAt: "updated_at",
+    timestamps: false,
   }
 );

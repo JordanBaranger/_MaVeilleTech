@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "main": "app.js",
   "devDependencies": {},
+  "type": "module",
   "scripts": {
     "dev": "node --watch app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db:create": "psql -U jordanmvt -d maveilletech -f ./src/database/data/create.sql",
+    "db:seed": "psql -U jordanmvt -d maveilletech -f ./src/database/data/seed.sql",
+    "db:reset": "npm run db:create && npm run db:seed"
   },
   "keywords": [],
   "author": "Nimo",
