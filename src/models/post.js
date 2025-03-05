@@ -1,5 +1,7 @@
 import sequelize from "../database/connect/connect";
 import { DataTypes, Model } from "sequelize";
+import PostTag from "./postTag.js";
+import Tag from "./tag.js";
 
 export default class Post extends Model {}
 
@@ -18,12 +20,12 @@ Post.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    publish_date: {
+    published: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
       allowNull: false,
     },
-    edit_date: {
+    edited: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
@@ -43,16 +45,6 @@ Post.init(
       defaultValue: "draft",
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "users",
-        key: "id",
-      },
-      onDelete: "CASCADE",
-      onUpdate: "CASCADE",
-    },
   },
   {
     sequelize,
@@ -63,3 +55,9 @@ Post.init(
     updatedAt: "updated_at",
   }
 );
+
+Post.belongsToMany(Tag, {
+  through: PostTag,
+  foreignKey: "post_id",
+  onDelete: "CASCADE",
+});
