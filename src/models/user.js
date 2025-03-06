@@ -35,7 +35,7 @@ User.init(
     bio: {
       type: DataTypes.STRING(255),
     },
-    profilePicture: {
+    profile_picture: {
       type: DataTypes.STRING,
       defaultValue: "default.png",
       validate: {

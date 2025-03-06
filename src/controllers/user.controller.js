@@ -4,10 +4,10 @@ const userController = {
   // Create a new user
   createUser: async (req, res) => {
     try {
-      const { pseudo, email, password, role } = req.body;
+      const { username, email, password, role } = req.body;
 
       try {
-        createUserFunction({ pseudo, email, password, role });
+        createUserFunction({ username, email, password, role });
         return res
           .status(201)
           .json({ message: "Utilisateur créé avec succès" });
