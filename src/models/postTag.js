@@ -1,4 +1,4 @@
-import sequelize from "../database/connect/connect";
+import sequelize from "../database/connect/connect.js";
 import { DataTypes, Model } from "sequelize";
 
 export default class PostTag extends Model {}
@@ -10,7 +10,7 @@ PostTag.init(
       allowNull: false,
       primaryKey: true,
       references: {
-        model: "posts",
+        model: "post",
         key: "id",
       },
       onDelete: "CASCADE",
@@ -21,7 +21,7 @@ PostTag.init(
       allowNull: false,
       primaryKey: true,
       references: {
-        model: "tags",
+        model: "tag",
         key: "id",
       },
       onDelete: "CASCADE",

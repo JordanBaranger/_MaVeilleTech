@@ -1,11 +1,12 @@
 import { Router } from "express";
 import tokenVerified from "../../middlewares/JWT/verify.js";
+import korben from "../../controllers/fetching/korbenRss.js";
 
 const articlesRouter = Router();
 
-// * GET /articles/
-articlesRouter.get("/");
-articlesRouter.get("/:id");
+// * GET /articles/korben
+articlesRouter.get("/korben", korben);
+articlesRouter.get("/korben/:id", korben);
 
 // * POST /articles/
 articlesRouter.post("/", tokenVerified);
