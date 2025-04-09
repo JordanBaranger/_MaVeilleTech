@@ -10,6 +10,7 @@ const korbenRssFeed = async () => {
       link: item.link,
       pubDate: item.pubDate,
       description: item.contentSnippet,
+      source: "korben.info",
     }));
   } catch (error) {
     console.error("Error fetching posts:", error);
