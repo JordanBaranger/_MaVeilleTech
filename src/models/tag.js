@@ -1,4 +1,4 @@
-import sequelize from "../database/connect/connect";
+import sequelize from "../database/connect/connect.js";
 import { DataTypes, Model } from "sequelize";
 import PostTag from "./postTag.js";
 import Post from "./post.js";
@@ -26,9 +26,3 @@ Tag.init(
     updatedAt: "updated_at",
   }
 );
-
-Tag.belongsToMany(Post, {
-  through: PostTag,
-  foreignKey: "tag_id",
-  onDelete: "CASCADE",
-});
