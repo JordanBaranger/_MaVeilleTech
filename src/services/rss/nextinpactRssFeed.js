@@ -4,16 +4,14 @@ const parser = new Parser();
 
 const nextInpactRssFeed = async () => {
   try {
-    const feed = await parser.parseURL(
-      "https://nextinpact.com/rss/acces-libre.xml"
-    );
+    const feed = await parser.parseURL("https://next.ink/feed");
     return feed.items.map((item) => ({
       title: item.title,
       link: item.link,
       pubDate: item.pubDate,
       description: item.contentSnippet,
       image: item.enclosure,
-      source: "nextinpact.com",
+      source: "next.ink",
     }));
   } catch (error) {
     console.error("Error fetching posts:", error);

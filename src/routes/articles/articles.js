@@ -24,9 +24,9 @@ articlesRouter.get("/frandroid/:id", rssController.frandroidRss);
 articlesRouter.get("/zataz", rssController.zatazRss);
 articlesRouter.get("/zataz/:id", rssController.zatazRss);
 
-// * GET /articles/nextinpact
-articlesRouter.get("/nextinpact", rssController.nextinpactRss);
-articlesRouter.get("/nextinpact/:id", rssController.nextinpactRss);
+// * GET /articles/next-ink
+articlesRouter.get("/next-ink", rssController.nextinpactRss);
+articlesRouter.get("/next-ink/:id", rssController.nextinpactRss);
 
 // * POST /articles/
 articlesRouter.post("/", tokenVerified);
